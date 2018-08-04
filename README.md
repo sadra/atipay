@@ -52,30 +52,32 @@ The **base route** starts with your server **Server Address** plus the **PORT** 
     "message": {
         "user": {
             "__v": 0,
-            "created_at": "2018-08-04T14:07:56.811Z",
-            "updated_at": "2018-08-04T14:07:56.811Z",
-            "mobile": 9119991124,
+            "created_at": "2018-08-04T18:08:19.014Z",
+            "updated_at": "2018-08-04T18:08:19.014Z",
+            "user_id": "09119991124123456",
+            "mobile": "09119991124",
             "serial_number": "123456",
             "ref_number": "123456789",
-            "_id": "5b65b33c5d940e7445e81b0a"
+            "_id": "5b65eb930c0c5a3b4859d8c5"
         }
     }
 }
 ```
 
 #### FAILURE RESPONSE:
-If user exist and paid before.
+If user exist and paid before, and that caused the **conflict**.
 
-**STATUS** : `403`
+**STATUS** : `409`
 
 ```json
 {
     "result": "User is exist",
     "user": {
-        "_id": "5b65b33c5d940e7445e81b0a",
-        "created_at": "2018-08-04T14:07:56.811Z",
-        "updated_at": "2018-08-04T14:07:56.811Z",
-        "mobile": 9119991124,
+        "_id": "5b65eb930c0c5a3b4859d8c5",
+        "created_at": "2018-08-04T18:08:19.014Z",
+        "updated_at": "2018-08-04T18:08:19.014Z",
+        "user_id": "09119991124123456",
+        "mobile": "09119991124",
         "serial_number": "123456",
         "ref_number": "123456789",
         "__v": 0
@@ -98,10 +100,11 @@ If user exist and paid before.
     "result": {
         "message": "The user is exist.",
         "user": {
-            "_id": "5b65b33c5d940e7445e81b0a",
-            "created_at": "2018-08-04T14:07:56.811Z",
-            "updated_at": "2018-08-04T14:07:56.811Z",
-            "mobile": 9119991124,
+            "_id": "5b65eb930c0c5a3b4859d8c5",
+            "created_at": "2018-08-04T18:08:19.014Z",
+            "updated_at": "2018-08-04T18:08:19.014Z",
+            "user_id": "09119991124123456",
+            "mobile": "09119991124",
             "serial_number": "123456",
             "ref_number": "123456789",
             "__v": 0

@@ -27,9 +27,9 @@ let addUser = (user) => {
 
         getUser(user.mobile, user.serial_number).then((exist) => {
             reject({
-                result: "User is exist",
+                result: "Conflict. User is exist!",
                 user: exist.user,
-                status: 403
+                status: 409
             })
         }).catch(() => {
             newUser.save()
