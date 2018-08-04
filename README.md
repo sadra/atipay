@@ -1,6 +1,6 @@
 # atipay
 
-##Installation
+## Installation
 
 1. Before everything make sure that you've installed `Nodejs` and `MongoDB` on your server.
 2. Then make a clone from this project on your server:
@@ -21,14 +21,14 @@ npm install pm2 -g
 pm2 start atipay.js
 ```
 
-## Use the API
+## API Usage
 
 The **base route** starts with your server **Server Address** plus the **PORT** and the **users** key. for example
 ```html
 0.0.0.0:32002/users
 ```
 
-### Add user payment
+### Add User Payment
 
 **Method** : `GET`
 **ROUTE** : `BASE_ROUTE/add`
@@ -81,7 +81,7 @@ If user exist and paid before.
 }
 ```
 
-### Verify user payment
+### Verify User Payment
 
 **Method** : `GET`
 **ROUTE** : `BASE_ROUTE/verify/MOBILE_NUMBER`
