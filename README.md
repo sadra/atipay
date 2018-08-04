@@ -88,7 +88,7 @@ If user exist and paid before.
 
 **Method** : `GET`
 
-**ROUTE** : `BASE_ROUTE/verify/MOBILE_NUMBER`
+**ROUTE** : `BASE_ROUTE/verify/MOBILE_NUMBER/SERIAL_NUMBER`
 
 #### RESPONSE:
 **STATUS** : `200`

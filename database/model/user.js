@@ -5,7 +5,8 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 const userSchema = new Schema({
-    mobile : { type: Number, unique: true},
+    user_id : { type: String, unique: true},
+    mobile : String,
     serial_number : String,
     ref_number : String,
     created_at: Date,
@@ -20,7 +21,7 @@ userSchema.pre('save', function(next) {
         this.created_at = currentDate;
 
     let self = this;
-    User.find({mobile: self.mobile}, function (err, docs) {
+    User.find({mobile: self.mobile, serial_number: self.serial_number}, function (err, docs) {
         if (!docs.length){
             next();
         }else{

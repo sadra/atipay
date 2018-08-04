@@ -19,12 +19,13 @@ let addUser = (user) => {
     return new Promise(function (resolve, reject) {
 
         let newUser = new User({
+            user_id: user.user_id,
             mobile: user.mobile,
             serial_number: user.serial_number,
             ref_number: user.ref_number
         });
 
-        getUser(newUser.mobile).then((exist) => {
+        getUser(user.mobile, user.serial_number).then((exist) => {
             reject({
                 result: "User is exist",
                 user: exist.user,
@@ -47,10 +48,13 @@ let addUser = (user) => {
     })
 };
 
-let getUser = (mobile) => {
+let getUser = (mobile, serial_number) => {
+
+    let user_id = mobile+serial_number;
+
     return new Promise(function (resolve, reject) {
 
-        User.find({mobile: mobile}).then(function (user) {
+        User.find({user_id: user_id}).then(function (user) {
             if(user.length === 0){
                 reject({
                     message: "User not found!",

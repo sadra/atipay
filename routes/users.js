@@ -7,9 +7,10 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/verify/:mobile', function(req, res, next) {
+router.get('/verify/:mobile/:serial_number', function(req, res, next) {
 
     let mobile = req.params.mobile;
+    let serial_number = req.params.serial_number;
     if(mobile === undefined){
         res.status(400).send({
             result: "Bad request.",
@@ -21,6 +22,13 @@ router.get('/verify/:mobile', function(req, res, next) {
         res.status(400).send({
             result: "Bad request.",
             message: "Mobile number must contains 11 digit"
+        });
+        return
+    }
+    if(mobile === undefined){
+        res.status(400).send({
+            result: "Bad request.",
+            message: "There is no serial_number."
         });
         return
     }
@@ -72,6 +80,7 @@ router.post('/add', function(req, res, next) {
     }
 
     let user = {
+        user_id: mobile+serial_number,
         mobile: mobile,
         serial_number: serial_number,
         ref_number: ref_number
