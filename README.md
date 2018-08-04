@@ -31,7 +31,9 @@ The **base route** starts with your server **Server Address** plus the **PORT** 
 ### Add User Payment
 
 **Method** : `GET`
+
 **ROUTE** : `BASE_ROUTE/add`
+
 **REQUEST BODY**:
 
 ```json
@@ -63,6 +65,7 @@ The **base route** starts with your server **Server Address** plus the **PORT** 
 
 #### FAILURE RESPONSE:
 If user exist and paid before.
+
 **STATUS** : `403`
 
 ```json
@@ -84,6 +87,7 @@ If user exist and paid before.
 ### Verify User Payment
 
 **Method** : `GET`
+
 **ROUTE** : `BASE_ROUTE/verify/MOBILE_NUMBER`
 
 #### RESPONSE:
