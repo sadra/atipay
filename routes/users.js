@@ -33,7 +33,7 @@ router.get('/verify/:mobile/:serial_number', function(req, res, next) {
         return
     }
 
-    database.getUser(mobile).then((result) => {
+    database.getUser(mobile, serial_number).then((result) => {
         res.status(200).send({
             user_exist: true,
             result: result
