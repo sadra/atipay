@@ -71,7 +71,7 @@ If user exist and paid before, and that caused the **conflict**.
 
 ```json
 {
-    "result": "User is exist",
+    "result": "Conflict. User is exist!",
     "user": {
         "_id": "5b65eb930c0c5a3b4859d8c5",
         "created_at": "2018-08-04T18:08:19.014Z",
@@ -82,7 +82,7 @@ If user exist and paid before, and that caused the **conflict**.
         "ref_number": "123456789",
         "__v": 0
     },
-    "status": 403
+    "status": 409
 }
 ```
 
