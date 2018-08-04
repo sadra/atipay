@@ -112,6 +112,7 @@ If user exist and paid before.
 
 #### FAILURE RESPONSE:
 If user not existed
+
 **STATUS** : `404`
 ```json
 {
