@@ -30,17 +30,17 @@ The **base route** starts with your server **Server Address** plus the **PORT** 
 
 ### Add User Payment
 
-**Method** : `GET`
+**Method** : `POST`
 
 **ROUTE** : `BASE_ROUTE/add`
 
-**REQUEST BODY**:
+**REQUEST BODY (JSON)**:
 
 ```json
 {
-"mobile" : "09112223333", //string
-"serial_number" : "123456789", //string
-"ref_number" : "123456789", //string
+    "mobile" : "09112223333", //string
+    "serial_number" : "123456789", //string
+    "ref_number" : "123456789", //string
 }
 ```
 
@@ -125,4 +125,40 @@ If user not existed
 ```
 
 
+
+### Settings
+
+#### Check the version
+
+**Method** : `POST`
+
+**ROUTE** : `BASE_ROUTE/settings/version`
+
+**REQUEST BODY (JSON)**:
+
+```json
+{
+    "version" : "2.0.0", //string
+    "password" : "abcd1234", //string
+}
+```
+
+#### RESPONSE:
+**STATUS** : `200`
+```json
+{
+    "version": "2.0.0"
+}
+```
+
+#### FAILURE RESPONSE:
+If password wrong
+
+**STATUS** : `403`
+```json
+{
+    result: "Not Allowed.",
+    message: "Check secrets, please."
+}
+```
 

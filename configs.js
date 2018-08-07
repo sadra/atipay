@@ -3,5 +3,6 @@ module.exports = {
     mongo: {
         url: "localhost:27772",
         db_name: "ati_pay"
-    }
+    },
+    api_secret: "GcvsxKCTTd"
 };

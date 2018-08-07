@@ -4,7 +4,7 @@ let database = require('../database/core');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.status(404).send('What do you want!?');
 });
 
 router.get('/verify/:mobile/:serial_number', function(req, res, next) {
