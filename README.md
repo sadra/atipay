@@ -25,14 +25,14 @@ pm2 start atipay.js
 
 The **base route** starts with your server **Server Address** plus the **PORT** and the **users** key. for example
 ```html
-0.0.0.0:32002/users
+0.0.0.0:32002
 ```
 
 ### Add User Payment
 
 **Method** : `POST`
 
-**ROUTE** : `BASE_ROUTE/add`
+**ROUTE** : `BASE_ROUTE/users/add`
 
 **REQUEST BODY (JSON)**:
 
@@ -90,7 +90,7 @@ If user exist and paid before, and that caused the **conflict**.
 
 **Method** : `GET`
 
-**ROUTE** : `BASE_ROUTE/verify/MOBILE_NUMBER/SERIAL_NUMBER`
+**ROUTE** : `BASE_ROUTE/users/verify/MOBILE_NUMBER/SERIAL_NUMBER`
 
 #### RESPONSE:
 **STATUS** : `200`
@@ -132,7 +132,7 @@ If user not existed
 
 **Method** : `POST`
 
-**ROUTE** : `BASE_ROUTE/settings/version`
+**ROUTE** : `BASE_ROUTE/users/settings/version`
 
 **REQUEST BODY (JSON)**:
 
@@ -157,8 +157,8 @@ If password wrong
 **STATUS** : `403`
 ```json
 {
-    result: "Not Allowed.",
-    message: "Check secrets, please."
+    "result": "Not Allowed.",
+    "message": "Check secrets, please."
 }
 ```
 
